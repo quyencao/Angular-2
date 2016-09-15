@@ -7,13 +7,20 @@ import {FavoriteComponent} from './favorite.component'
     selector: 'my-app',
     template: `
         <h1>Hello Angular beta 2</h1>
-        <favorite [is-favorite]="post.isFavorite"></favorite>
+        <favorite *ngFor="#post of posts" [is-favorite]="post.isFavorite" (change)="onFavoriteChange($event)"></favorite>
     `,
     directives: [CoursesComponent, AuthorComponent, FavoriteComponent]
 })
 export class AppComponent { 
-    post = {
+    posts = [{
         title: "New post",
         isFavorite: true
+    }, {
+        title: "New post",
+        isFavorite: false
+    }]
+
+    onFavoriteChange($event){
+        console.log($event);
     }
 }

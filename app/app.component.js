@@ -29,15 +29,21 @@ System.register(['angular2/core', './course.component', './author.component', '.
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
-                    this.post = {
-                        title: "New post",
-                        isFavorite: true
-                    };
+                    this.posts = [{
+                            title: "New post",
+                            isFavorite: true
+                        }, {
+                            title: "New post",
+                            isFavorite: false
+                        }];
                 }
+                AppComponent.prototype.onFavoriteChange = function ($event) {
+                    console.log($event);
+                };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n        <h1>Hello Angular beta 2</h1>\n        <favorite [is-favorite]=\"post.isFavorite\"></favorite>\n    ",
+                        template: "\n        <h1>Hello Angular beta 2</h1>\n        <favorite *ngFor=\"#post of posts\" [is-favorite]=\"post.isFavorite\" (change)=\"onFavoriteChange($event)\"></favorite>\n    ",
                         directives: [course_component_1.CoursesComponent, author_component_1.AuthorComponent, favorite_component_1.FavoriteComponent]
                     }), 
                     __metadata('design:paramtypes', [])
