@@ -1,4 +1,4 @@
-System.register(['angular2/core', './course.component', './author.component', './star.component'], function(exports_1, context_1) {
+System.register(['angular2/core', './course.component', './author.component', './favorite.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './course.component', './author.component', '.
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, course_component_1, author_component_1, star_component_1;
+    var core_1, course_component_1, author_component_1, favorite_component_1;
     var AppComponent;
     return {
         setters:[
@@ -23,18 +23,22 @@ System.register(['angular2/core', './course.component', './author.component', '.
             function (author_component_1_1) {
                 author_component_1 = author_component_1_1;
             },
-            function (star_component_1_1) {
-                star_component_1 = star_component_1_1;
+            function (favorite_component_1_1) {
+                favorite_component_1 = favorite_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
+                    this.post = {
+                        title: "New post",
+                        isFavorite: true
+                    };
                 }
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n        <h1>Hello Angular beta 2</h1>\n        <stars></stars>\n    ",
-                        directives: [course_component_1.CoursesComponent, author_component_1.AuthorComponent, star_component_1.StarComponent]
+                        template: "\n        <h1>Hello Angular beta 2</h1>\n        <favorite [is-favorite]=\"post.isFavorite\"></favorite>\n    ",
+                        directives: [course_component_1.CoursesComponent, author_component_1.AuthorComponent, favorite_component_1.FavoriteComponent]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);

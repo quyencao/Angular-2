@@ -1,14 +1,19 @@
 import {Component} from 'angular2/core'
 import {CoursesComponent} from './course.component'
 import {AuthorComponent} from './author.component'
-import {StarComponent} from './star.component'
+import {FavoriteComponent} from './favorite.component'
 
 @Component({
     selector: 'my-app',
     template: `
         <h1>Hello Angular beta 2</h1>
-        <stars></stars>
+        <favorite [is-favorite]="post.isFavorite"></favorite>
     `,
-    directives: [CoursesComponent, AuthorComponent, StarComponent]
+    directives: [CoursesComponent, AuthorComponent, FavoriteComponent]
 })
-export class AppComponent { }
+export class AppComponent { 
+    post = {
+        title: "New post",
+        isFavorite: true
+    }
+}

@@ -11,31 +11,35 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var StarComponent;
+    var FavoriteComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            StarComponent = (function () {
-                function StarComponent() {
+            FavoriteComponent = (function () {
+                function FavoriteComponent() {
                     this.isActive = false;
                 }
-                StarComponent.prototype.onClick = function () {
+                FavoriteComponent.prototype.onClick = function () {
                     this.isActive = !this.isActive;
                 };
-                StarComponent = __decorate([
+                __decorate([
+                    core_1.Input('is-favorite'), 
+                    __metadata('design:type', Object)
+                ], FavoriteComponent.prototype, "isActive", void 0);
+                FavoriteComponent = __decorate([
                     core_1.Component({
-                        selector: 'stars',
+                        selector: 'favorite',
                         template: "\n        <i class=\"glyphicon\" [class.glyphicon-star]=\"isActive\" [class.glyphicon-star-empty]=\"!isActive\" (click)=\"onClick()\"></i>\n    "
                     }), 
                     __metadata('design:paramtypes', [])
-                ], StarComponent);
-                return StarComponent;
+                ], FavoriteComponent);
+                return FavoriteComponent;
             }());
-            exports_1("StarComponent", StarComponent);
+            exports_1("FavoriteComponent", FavoriteComponent);
         }
     }
 });
-//# sourceMappingURL=star.component.js.map
+//# sourceMappingURL=favorite.component.js.map
