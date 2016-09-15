@@ -43,7 +43,7 @@ System.register(['angular2/core', './course.component', './author.component', '.
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n        <h1>Hello Angular beta 2</h1>\n        <favorite *ngFor=\"#post of posts\" [is-favorite]=\"post.isFavorite\" (change)=\"onFavoriteChange($event)\"></favorite>\n    ",
+                        template: "\n        <h1>Hello Angular beta 2</h1>\n        <favorite *ngFor=\"#post of posts\" [is-favorite]=\"post.isFavorite\" (change)=\"onFavoriteChange($event)\"></favorite>\n        <i class=\"glyphicon glyphicon-star\"></i>\n    ",
                         directives: [course_component_1.CoursesComponent, author_component_1.AuthorComponent, favorite_component_1.FavoriteComponent]
                     }), 
                     __metadata('design:paramtypes', [])

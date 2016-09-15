@@ -8,6 +8,7 @@ import {FavoriteComponent} from './favorite.component'
     template: `
         <h1>Hello Angular beta 2</h1>
         <favorite *ngFor="#post of posts" [is-favorite]="post.isFavorite" (change)="onFavoriteChange($event)"></favorite>
+        <i class="glyphicon glyphicon-star"></i>
     `,
     directives: [CoursesComponent, AuthorComponent, FavoriteComponent]
 })
