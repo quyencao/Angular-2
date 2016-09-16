@@ -1,4 +1,4 @@
-System.register(['angular2/core', './course.component', './author.component', './favorite.component', './like.component'], function(exports_1, context_1) {
+System.register(['angular2/core', './course.component', './author.component', './favorite.component', './like.component', './vote.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './course.component', './author.component', '.
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, course_component_1, author_component_1, favorite_component_1, like_component_1;
+    var core_1, course_component_1, author_component_1, favorite_component_1, like_component_1, vote_component_1;
     var AppComponent;
     return {
         setters:[
@@ -28,6 +28,9 @@ System.register(['angular2/core', './course.component', './author.component', '.
             },
             function (like_component_1_1) {
                 like_component_1 = like_component_1_1;
+            },
+            function (vote_component_1_1) {
+                vote_component_1 = vote_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -38,7 +41,14 @@ System.register(['angular2/core', './course.component', './author.component', '.
                         likes: 10,
                         isLike: false
                     };
+                    this.vote = {
+                        totalVotes: 10,
+                        vote: 0
+                    };
                 }
+                AppComponent.prototype.onVoteChange = function ($event) {
+                    console.log($event);
+                };
                 AppComponent.prototype.onFavoriteChange = function ($event) {
                     console.log($event);
                 };
@@ -48,8 +58,8 @@ System.register(['angular2/core', './course.component', './author.component', '.
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n        <h1>Hello Angular beta 2</h1>\n        <favorite [is-favorite]=\"post.isFavorite\" (change)=\"onFavoriteChange($event)\"></favorite>\n        <like [like-count]=\"post.likes\" [is-like]=\"post.isLike\" (like-change)=\"onLikeChange($event)\"></like>\n    ",
-                        directives: [course_component_1.CoursesComponent, author_component_1.AuthorComponent, favorite_component_1.FavoriteComponent, like_component_1.LikeComponent]
+                        template: "\n        <h1>Hello Angular beta 2</h1>\n        <favorite [is-favorite]=\"post.isFavorite\" (change)=\"onFavoriteChange($event)\"></favorite>\n        <like [like-count]=\"post.likes\" [is-like]=\"post.isLike\" (like-change)=\"onLikeChange($event)\"></like>\n        <vote [total-votes]=\"vote.totalVotes\" [vote]=\"vote.vote\" (vote-change)=\"onVoteChange($event)\"></vote>\n    ",
+                        directives: [course_component_1.CoursesComponent, author_component_1.AuthorComponent, favorite_component_1.FavoriteComponent, like_component_1.LikeComponent, vote_component_1.VoteComponent]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
