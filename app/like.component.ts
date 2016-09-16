@@ -19,10 +19,6 @@ import {Component, Input, Output, EventEmitter} from 'angular2/core'
         .highlight {
             color: deeppink;
         }
-
-        .glyphicon, span {
-            font-size: 40px
-        }
     `]
 })
 export class LikeComponent {
@@ -40,3 +36,7 @@ export class LikeComponent {
         this.change.emit({likes: this.totalLikes, isLike: this.isLike});
     }
 }
+
+//  .glyphicon, span {
+//     font-size: 40px
+// }
